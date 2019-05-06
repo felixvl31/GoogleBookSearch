@@ -31,3 +31,11 @@
 .list-overflow-container li:last-child {
   border-bottom: none;
 }
+
+
+.list-group-item{
+  border-radius:10px;
+  margin-bottom:5px;
+  background: #ECE4B7;
+  border:2px #D36135 solid;
+}

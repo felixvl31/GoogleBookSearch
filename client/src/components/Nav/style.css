@@ -1,4 +1,24 @@
 .active {
   font-weight: bolder !important;
-  color:black;
+  color:#02020B!important;
+}
+
+.navbar-brand{
+  color:#D36135;
+  font-size:25px;
+}
+
+a.nav-link{
+  color:#D36135 ;
+}
+
+a.nav-link:hover,a.nav-link:active{
+  color:#7FB069;
+  border:2px solid #7FB069;
+  border-radius:10px;
+}
+
+.navbar{
+  background-color:#E6AA68 !important;
+  border-bottom: 2px solid #D36135;
 }

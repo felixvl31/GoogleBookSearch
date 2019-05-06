@@ -2,19 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function Nav() {
+function Nav(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-secondary">
-      <li className="navbar-brand" href="/">
-        Google Books
-      </li>
+      <span className="navbar-brand" href="/">
+        Google Books Search
+      </span>
       
-      <span>       
-       <Link to="/search" className={window.location.pathname === "/search" || window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+      <span> 
+       <Link to="/search" className={props.location.pathname === "/search" || props.location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Search
       </Link></span>
       <span>       
-      <Link to="/saved" className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
+      <Link to="/saved" className={props.location.pathname === "/saved" ? "nav-link active" : "nav-link"}>
           Saved
       </Link></span>
     </nav>

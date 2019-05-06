@@ -3,8 +3,8 @@ import React from "react";
 function Title({ children }) {
   return (
     <div
-      style={{ height: 100, clear: "both", paddingTop: 40, textAlign: "center" }}
-      className="jumbotron"
+      style={{ height: 100, clear: "both", paddingTop: 30, textAlign: "center" }}
+      className="jumbotron header"
     >
       {children}
     </div>

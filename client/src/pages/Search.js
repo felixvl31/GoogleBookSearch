@@ -5,8 +5,9 @@ import Jumbotron from "../components/Jumbotron";
 import Title from "../components/Title";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
+import {ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
+import "./style.css";
 
 class Books extends Component {
   state = {
@@ -83,12 +84,11 @@ class Books extends Component {
 
                   <ListItem key={book.id}>
                     <Row>
-                      <Col size="sm-9">
-                        <strong>{book.volumeInfo.title}</strong>
-                          <br></br>
-                        <i>By { book.volumeInfo.authors !== undefined ? book.volumeInfo.authors.join(", "):"???"}</i>
+                      <Col size="9 md-10">
+                        <div className="title"><strong>{book.volumeInfo.title}</strong></div>
+                        <div className="author"><i>By { book.volumeInfo.authors !== undefined ? book.volumeInfo.authors.join(", "):"???"}</i></div>
                       </Col>
-                      <Col size="sm-3">
+                      <Col size="3 md-2 buttons">
                         <ViewBtn link={book.volumeInfo.previewLink}></ViewBtn>
                         <SaveBtn onClick={() => this.saveBook(
                                                         book.volumeInfo.title,
@@ -100,18 +100,18 @@ class Books extends Component {
                       </Col>
                     </Row>
                     <Row>
-                      <Col size="sm-2">
+                      <Col size="4 md-2 image">
                         <img src={book.volumeInfo.imageLinks?book.volumeInfo.imageLinks.thumbnail:"./images/dummy.gif"} alt={book.volumeInfo.title}></img>
                       </Col>
-                      <Col size="sm-10">
-                        {book.volumeInfo.description} 
+                      <Col size="8 md-10 description">
+                        <div className="description">{(book.volumeInfo.description)? (book.volumeInfo.description.length <1000 ? book.volumeInfo.description : book.volumeInfo.description.slice(0,1000)+"..."):("...")} </div>
                       </Col>
                     </Row>  
                   </ListItem>
                 ))}
               </>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3 className="noResults">No Results to Display</h3>
             )}
           </Col>
         </Row>
