@@ -21,4 +21,19 @@ a.nav-link:hover,a.nav-link:active{
 .navbar{
   background-color:#E6AA68 !important;
   border-bottom: 2px solid #D36135;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:2;
+}
+
+.header{
+  margin-top:100px;
+  margin-bottom:20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .header{
+    margin-top:125px;
+  }
 }
